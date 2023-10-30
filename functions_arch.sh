@@ -352,6 +352,9 @@ genfstab -U /mnt >> /mnt/etc/fstab
 # It allows chroot to call functions
 cp ./functions_arch.sh /mnt
 
+# Export variables beforehand (bugfix)
+export user_name user_pass choose_disk
+
 #6.2 chroot
 arch-chroot /mnt /bin/bash -- <<CHROOT
 source ./functions_arch.sh
