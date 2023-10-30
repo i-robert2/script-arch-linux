@@ -29,7 +29,7 @@ Choose the disk you want to partition: " choose_disk
     clear
 
 elif [[ "$install_option" == "2" ]]
-
+then
     echo -e "$orange_color[INFO] Set up your time zone.$reset_color"
     read -p "Choose your city: " time_city # suggestion: make it so that if you misstype a letter, the script will autocorrect it
     read -p "Choose you region: " time_region
