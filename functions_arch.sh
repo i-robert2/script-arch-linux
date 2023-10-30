@@ -244,13 +244,7 @@ sed -i '/^# %wheel ALL=(ALL:ALL) ALL$/s/.*/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoe
 function install_grub {
 
 mkdir /boot/efi
-if [[ "$install_option" == "1" ]]
-then
-    mount /dev/sda1 /boot/efi
-elif [[ "$install_option" == "2"  ]]
-then
-    mount $1 /boot/efi
-fi
+mount $1 /boot/efi
 grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
 if ls /boot/grub | grep -q "locale"; then
 echo "/etc/grub/locale found!" >> /dev/null
@@ -308,7 +302,7 @@ echo “myhostname” >> /etc/hostname
 add_user $user_name $user_pass
 
 #e configure grub
-install_grub
+install_grub ${choose_disk}1
 
 #f Install graphical user interface (gnome)
 install_gui
