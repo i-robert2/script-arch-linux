@@ -269,9 +269,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 #8 Install graphical usr interface (gnome)
 function install_gui {
 
-if [[ "$install_option" == "1" ]]
-then
-
 pacman -S gnome<<GNOME
 1-56
 1
@@ -281,20 +278,6 @@ yes
 GNOME
 
 pacman --noconfirm -S gnome-tweaks
-
-elif [[ "$install_option" == "2"  ]]
-then
-
-pacman -S gnome<<GNOME
-1-56
-1
-1
-1
-yes
-GNOME
-pacman --noconfirm -S gnome-tweaks
-
-fi
 
 }
 
