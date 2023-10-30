@@ -342,7 +342,7 @@ conf_disks
 
 
 #5 Install essential packages
-pacstrap -K /mnt --noconfirm base linux linux-firmware networkmanager openssh grub efibootmgr dosfstools os-prober mtools xorg-server
+pacstrap -K /mnt --noconfirm base linux linux-firmware networkmanager openssh sudo grub efibootmgr dosfstools os-prober mtools xorg-server
 
 
 #6 Configure the system
@@ -408,7 +408,7 @@ clear
 echo -e "$orange_color[INFO] Install essential packages (base, linux, linux-firmware, ssh, sudo, grub and Window system (xorg system)).$reset_color"
 sleep 3
 
-pacstrap -K /mnt --noconfirm base linux linux-firmware networkmanager openssh sudo grub efibootmgr dosfstools os-prober mtools xorg-server 
+pacstrap -K /mnt --noconfirm base linux linux-firmware networkmanager openssh sudo grub efibootmgr dosfstools os-prober mtools xorg-server
 
 echo -e "$green_color[DONE] The essential packages (base, linux, linux-firmware, ssh, sudo, grub and Window system (xorg system)) have been installed!$reset_color"
 sleep 5
