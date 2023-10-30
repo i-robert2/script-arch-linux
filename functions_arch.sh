@@ -15,12 +15,20 @@ function custom_questions {
 echo -e "$orange_color[INFO] Set up your account.$reset_color"
 read -p "Choose a name for the new user: " user_name
 read -p "Choose a password for $user_name: " user_pass # suggestions: add flag to not show password as you write it down and ask to verify it
-echo -e "${green_color}Script is running...$reset_color"
 
 clear
 
-if [[ "$install_option" == "2" ]]
+if [[ "$install_option" == "1" ]]
 then
+
+    echo -e "$orange_color[INFO] Choose the disk you want to partition and the size of the partitions (GPT only).$reset_color"
+    sfdisk -l
+    read -p "
+Choose the disk you want to partition: " choose_disk
+
+    clear
+
+elif [[ "$install_option" == "2" ]]
 
     echo -e "$orange_color[INFO] Set up your time zone.$reset_color"
     read -p "Choose your city: " time_city # suggestion: make it so that if you misstype a letter, the script will autocorrect it
@@ -39,11 +47,10 @@ Choose the size of the root partition (xM / xG): " choose_root_size
 
     clear
 
-else
-
-    sleep 1
-
 fi
+
+echo -e "${green_color}Script is running...$reset_color"
+sleep 2
 
 }
 
