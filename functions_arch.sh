@@ -268,6 +268,7 @@ pacman -S gnome<<GNOME
 1-56
 1
 1
+1
 yes
 GNOME
 
@@ -278,6 +279,7 @@ then
 
 pacman -S gnome<<GNOME
 1-56
+1
 1
 1
 yes
