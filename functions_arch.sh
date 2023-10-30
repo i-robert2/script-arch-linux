@@ -51,6 +51,7 @@ fi
 
 echo -e "${green_color}Script is running...$reset_color"
 sleep 2
+clear
 
 }
 
